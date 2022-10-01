@@ -1,6 +1,16 @@
 from selenium.webdriver.common.by import By
 
 
+def find_elements(driver, selector_type, element_identifier):
+    selector_type = selector_type.upper()
+    if selector_type == 'ID':
+        return driver.find_elements(By.ID, element_identifier)
+    if selector_type == 'XPATH':
+        return driver.find_elements(By.XPATH, element_identifier)
+
+    raise NotImplementedError(f'No FindElementsBy implementation for selector_type: {selector_type}')
+
+
 def find_element(driver, selector_type, element_identifier):
     selector_type = selector_type.upper()
     if selector_type == 'ID':
