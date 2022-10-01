@@ -1,0 +1,2 @@
+class NoMorePagesException(Exception):
+    pass

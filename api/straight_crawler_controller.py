@@ -19,17 +19,18 @@ straight_parsing_service = StraightParsingService()
 @routes.route("/straight_crawler/", methods=["POST"])
 def straight_crawler_controller():
     crawling_info = StraightCrawlingInfo(**json.loads(request.data))
-    crawled_pages = straight_crawling_service.gather_html_information(crawling_info)
+    straight_crawling_service.set_crawling_info(crawling_info)
+    crawled_pages = straight_crawling_service.gather_html_information()
     if crawled_pages == 0:
-        logger.error(f'An error occurred during html crawling. No pages were crawled')
+        logger.error(f'An error occurred during straight html crawling. No pages were crawled')
         return FlaskResponse(json.dumps(ControllerResponses.NO_CRAWLED_PAGES, default=lambda o: o.__dict__),
-                             status=HTTPStatus.BAD_REQUEST)
+                             status=HTTPStatus.INTERNAL_SERVER_ERROR)
 
     extracted_elements_count = straight_parsing_service.parse_crawled_items(crawling_info)
     if extracted_elements_count == 0:
         logger.error(f'An error occurred during html parsing. No item could be parsed')
         return FlaskResponse(json.dumps(ControllerResponses.NO_PARSED_ITEMS, default=lambda o: o.__dict__),
-                             status=HTTPStatus.BAD_REQUEST)
+                             status=HTTPStatus.INTERNAL_SERVER_ERROR)
 
     return FlaskResponse(json.dumps({
         'status': 'success',
