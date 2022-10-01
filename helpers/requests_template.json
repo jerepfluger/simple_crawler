@@ -1,0 +1,14 @@
+{
+  "straight_crawling": {
+    "browser_type": "firefox|chromium",
+    "bot_name": "",
+    "crawl_url": "http://....",
+    "information_selector_type": "xpath|id|tag_name|...",
+    "html_information_location": ".//div[@class='something']",
+    "inner_html_information_location": ".//div[@class='something']",
+    "next_page_policy": "scrolling|paging",
+    "next_page_selector_type": "xpath|id|tag_name",
+    "next_page_location": ".//div[@class='something']",
+    "scrolling_timeout": 5
+  }
+}
