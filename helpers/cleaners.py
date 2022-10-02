@@ -9,8 +9,6 @@ def get_cleaner(cleaner):
 
 
 def clean_price(string):
-    """
-    """
     r = 0
     # avoid parsing an empty string or a string that does not contain a number
     if string is not None and any(i.isdigit() for i in string):
