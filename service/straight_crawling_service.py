@@ -20,7 +20,8 @@ class StraightCrawlingService:
     def gather_html_information(self):
         self.driver = WebDriver().acquire(self.crawling_info.browser_type)
         self.driver.maximize_window()
-        create_folder_if_not_exists(self.config['data_base_path'], self.crawling_info.bot_name)
+        folder_name = f'{self.config["data_base_path"]}/{self.crawling_info.bot_name}'
+        create_folder_if_not_exists(folder_name)
         logger.info('Directory for storing html content is clean and empty')
 
         logger.info(f'Browser GET: {self.crawling_info.crawl_url}')
@@ -79,7 +80,7 @@ class StraightCrawlingService:
                 self.save_html_content(self.crawling_info.html_information_location, pages_count)
                 pages_count += 1
                 logger.info(f'Selecting page {pages_count + 1} if exists')
-                self.next_page()
+                self.next_page(pages_count)
         except NoMorePagesException:
             logger.info(f'We\'ve reached the final page over a total count of {pages_count}')
 
@@ -99,18 +100,19 @@ class StraightCrawlingService:
                   'w+') as file:
             file.write(element_html)
 
-    def next_page(self):
+    def next_page(self, page_number):
         try:
             wait_presence_of_element_located(self.driver, 5, self.crawling_info.next_page_selector_type,
                                              self.crawling_info.next_page_location)
-            element = find_element(self.driver, self.crawling_info.next_page_selector_type,
+            pages_element = find_elements(self.driver, self.crawling_info.next_page_selector_type,
                                    self.crawling_info.next_page_location)
-            self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-            if not element.is_enabled():
-                raise NoMorePagesException()
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", pages_element[0])
+            for page in pages_element:
+                if page.text is not None and page.text != '' and int(page.text) == page_number + 1:
+                    self.driver.execute_script('arguments[0].click();', page)
+                    return
 
-            find_element_and_click_it_with_javascript(self.driver, self.crawling_info.next_page_selector_type,
-                                                      self.crawling_info.next_page_location)
+            raise NoMorePagesException
         except (NoSuchElementException, TimeoutException):
             logger.error(
                 f'Unable to find next page button with selector_type: {self.crawling_info.next_page_selector_type}'
