@@ -21,7 +21,7 @@ def straight_crawler_controller():
         return FlaskResponse(json.dumps(ControllerResponses.NO_CRAWLED_PAGES, default=lambda o: o.__dict__),
                              status=HTTPStatus.INTERNAL_SERVER_ERROR)
 
-    extracted_elements_count = StraightParsingService().parse_crawled_items(crawling_info)
+    extracted_elements_count = StraightParsingService(crawling_info).parse_crawled_items()
     if extracted_elements_count == 0:
         logger.error(f'An error occurred during html parsing. No item could be parsed')
         return FlaskResponse(json.dumps(ControllerResponses.NO_PARSED_ITEMS, default=lambda o: o.__dict__),

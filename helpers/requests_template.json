@@ -9,6 +9,10 @@
     "next_page_policy": "scrolling|paging",
     "next_page_selector_type": "xpath|id|tag_name",
     "next_page_location": ".//div[@class='something']",
-    "scrolling_timeout": 5
+    "scrolling_timeout": 5,
+    "parsing_items": {
+      "name_1": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]},
+      "name_n": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]}
+    }
   }
 }
