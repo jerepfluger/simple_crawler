@@ -22,7 +22,6 @@
     "information_selector_type": "xpath|id|tag_name|...",
     "html_information_location": ".//div[@class='something']",
     "html_information_attribute_identifier": "href",
-    "html_items_per_line": 3,
     "inner_html_information_location": ".//div[@class='something']",
     "next_page_policy": "scrolling|paging",
     "next_page_selector_type": "xpath|id|tag_name",
