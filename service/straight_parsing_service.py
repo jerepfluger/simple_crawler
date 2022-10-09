@@ -44,10 +44,6 @@ class StraightParsingService:
         self.files = [f for f in listdir(folder_name) if isfile(join(folder_name, f))]
 
     def initialize_results_file(self):
-        """
-        In this method we'll create the output file that will be send to the client. It'll be a csv file at first.
-        Inside the method we'll just create the file as <bot_name>_results.csv and we'll continuously add parsed information
-        """
         folder_name = f'{self.config["data_base_path"]}/{self.crawling_info.bot_name}/results'
         create_folder_if_not_exists(folder_name)
         with open(f'{folder_name}/results.csv', 'w+') as csv_file:

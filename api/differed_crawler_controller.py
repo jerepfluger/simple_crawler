@@ -35,6 +35,7 @@ def differed_crawler_controller():
         return FlaskResponse(json.dumps(ControllerResponses.NO_PARSED_ITEMS, default=lambda o: o.__dict__),
                              status=HTTPStatus.BAD_REQUEST)
 
+    crawled_pages = 7
     return FlaskResponse(json.dumps({
         'status': 'success',
         'message': f'Crawled {crawled_pages} successfully and extracted {extracted_elements_count} items'
