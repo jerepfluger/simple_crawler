@@ -27,38 +27,38 @@ web_driver:
       dom.popup_maximum: 0
       privacy.popups.showBrowserMessage: false
       privacy.popups.disable_from_plugins: 3
-      network.http.pipelining: true
-      network.http.proxy.pipelining: true
-      network.http.pipelining.maxrequests: 8
-      content.notify.interval: 500000
-      content.notify.ontimer: true
-      content.switch.threshold: 250000
-      browser.cache.memory.capacity: 65536  # Increase the cache capacity.
-      reader.parse-on-load.enabled: false  # Disable reader, we won't need that.
-      browser.pocket.enabled: false  # Duck pocket too!
-      loop.enabled: false
-      browser.chrome.toolbar_style: 1  # Text on Toolbar instead of icons
-      browser.display.show_image_placeholders: false  # Don't show thumbnails on not loaded images.
-      browser.display.use_document_colors: false  # Don't show document colors.
-      browser.display.use_document_fonts: 0  # Don't load document fonts.
-      browser.display.use_system_colors: true  # Use system colors.
-      browser.formfill.enable: false  # Autofill on forms disabled.
-      browser.helperApps.deleteTempFileOnExit: true  # Delete temprorary files.
-      browser.shell.checkDefaultBrowser: false
-      browser.startup.homepage: "about:blank"
-      browser.startup.page: 0  # blank
-      browser.tabs.forceHide: true  # Disable tabs, We won't need that.
-      browser.urlbar.autoFill: true  # Disable autofill on URL bar.
-      browser.urlbar.autocomplete.enabled: true  # Disable autocomplete on URL bar.
-      browser.urlbar.showPopup: false  # Disable list of URLs when typing on URL bar.
-      browser.urlbar.showSearch: false  # Disable search bar.
-      extensions.checkCompatibility: false  # Addon update disabled
-      extensions.checkUpdateSecurity: false
-      extensions.update.autoUpdateEnabled: false
-      extensions.update.enabled: false
-      general.startup.browser: false
-      plugin.default_plugin_disabled: false
-      permissions.default.image: 2  # Image load disabled again
+#      network.http.pipelining: true
+#      network.http.proxy.pipelining: true
+#      network.http.pipelining.maxrequests: 8
+#      content.notify.interval: 500000
+#      content.notify.ontimer: true
+#      content.switch.threshold: 250000
+#      browser.cache.memory.capacity: 65536  # Increase the cache capacity.
+#      reader.parse-on-load.enabled: false  # Disable reader, we won't need that.
+#      browser.pocket.enabled: false  # Duck pocket too!
+#      loop.enabled: false
+#      browser.chrome.toolbar_style: 1  # Text on Toolbar instead of icons
+#      browser.display.show_image_placeholders: false  # Don't show thumbnails on not loaded images.
+#      browser.display.use_document_colors: false  # Don't show document colors.
+#      browser.display.use_document_fonts: 0  # Don't load document fonts.
+#      browser.display.use_system_colors: true  # Use system colors.
+#      browser.formfill.enable: false  # Autofill on forms disabled.
+#      browser.helperApps.deleteTempFileOnExit: true  # Delete temprorary files.
+#      browser.shell.checkDefaultBrowser: false
+#      browser.startup.homepage: "about:blank"
+#      browser.startup.page: 0  # blank
+#      browser.tabs.forceHide: true  # Disable tabs, We won't need that.
+#      browser.urlbar.autoFill: true  # Disable autofill on URL bar.
+#      browser.urlbar.autocomplete.enabled: true  # Disable autocomplete on URL bar.
+#      browser.urlbar.showPopup: false  # Disable list of URLs when typing on URL bar.
+#      browser.urlbar.showSearch: false  # Disable search bar.
+#      extensions.checkCompatibility: false  # Addon update disabled
+#      extensions.checkUpdateSecurity: false
+#      extensions.update.autoUpdateEnabled: false
+#      extensions.update.enabled: false
+#      general.startup.browser: false
+#      plugin.default_plugin_disabled: false
+#      permissions.default.image: 2  # Image load disabled again
       user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15"
   cache:
     max_entries: 20

@@ -14,6 +14,7 @@ from . import routes
 
 @routes.route("/straight_crawler/", methods=["POST"])
 def straight_crawler_controller():
+    logger.info('Starting straight crawler process')
     crawling_info = StraightCrawlingInfo(**json.loads(request.data))
     crawled_pages = StraightCrawlingService(crawling_info).gather_html_information()
     if crawled_pages == 0:
