@@ -14,5 +14,24 @@
       "name_1": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]},
       "name_n": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]}
     }
+  },
+  "differed_crawling": {
+    "browser_type": "firefox|chromium",
+    "bot_name": "",
+    "crawl_url": "http://....",
+    "information_selector_type": "xpath|id|tag_name|...",
+    "html_information_location": ".//div[@class='something']",
+    "html_information_attribute_identifier": "href",
+    "inner_html_information_location": ".//div[@class='something']",
+    "next_page_policy": "scrolling|paging",
+    "next_page_selector_type": "xpath|id|tag_name",
+    "next_page_location": ".//div[@class='something']",
+    "complete_crawl_url": "http://www.websitename/",
+    "scrolling_needs_click": true,
+    "scrolling_timeout": 5,
+    "parsing_items": {
+      "name_1": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]},
+      "name_n": {"selector_type": "xpath|id|tag_name|...", "element_identifier": ".//div[@class='ñlasjkf']", "cleaner": ["price"]}
+    }
   }
 }
